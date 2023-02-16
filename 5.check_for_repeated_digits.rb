@@ -14,14 +14,13 @@
 
 def check_repeated_digits(number)
   arr = number.to_s.split('').tally
-  arr.each {|key, value| puts "Disqualified" unless value <= 1}
+  arr.each { |key, value| puts 'Disqualified' unless value <= 1 }
 end
-
 
 def check_repeated_digits_option(number)
   arr = number.to_s.chars.map(&:to_i)
-  puts arr.uniq.length != 1 ?  "#{number} => Congrats! Digits are are all unique" :  "#{number} => Disqualified. Contains duplicates."
+  puts arr.uniq.length != 1 ? "#{number} => Congrats! Digits are are all unique" : "#{number} => Disqualified. Contains duplicates."
 end
 
-check_repeated_digits(14422)
+check_repeated_digits(14_422)
 check_repeated_digits_option(555)
