@@ -4,3 +4,18 @@
 # You’d then tell the program to multiply that number, then each one below it, by the integer that is one less than it.
 # To get you started, in Ruby, the line accomplishing this task could look like this:
 # number = number – 1
+
+# -- PSUEDO -- #
+# 1. Get the number in method
+# 2. Do a ".." up until the given number
+# 3. And iterate over all of these, multiplying it to a sum as long as it's less than number, but over 0.
+# 4. print out sum
+def factorial_numbers(number)
+  arr = (1..number).to_a
+  sum = arr.reduce(1) do |accmulator, value|
+    accmulator * value
+  end
+  puts sum
+end
+
+factorial_numbers(6)
