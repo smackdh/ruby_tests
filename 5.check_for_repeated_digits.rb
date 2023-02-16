@@ -4,3 +4,24 @@
 # wouldn’t qualify.
 # The key to solving this Ruby problem is to isolate each digit in the series and then compare them to each other.
 # To do this, you separate the digits and put them in an array, which allows Ruby to look at them as individual units.
+
+
+# -- PSUEDO -- #
+# 1. Make a method that takes a number
+# 2. Split the number into an array.
+# 3. Iterate over array, check if the "count" for that specific value is higher than 1.
+# 4. Unless 0, disqualify.
+
+def check_repeated_digits(number)
+  arr = number.to_s.split('').tally
+  arr.each {|key, value| puts "Disqualified" unless value <= 1}
+end
+
+
+def check_repeated_digits_option(number)
+  arr = number.to_s.chars.map(&:to_i)
+  puts arr.uniq.length != 1 ?  "#{number} => Congrats! Digits are are all unique" :  "#{number} => Disqualified. Contains duplicates."
+end
+
+check_repeated_digits(14422)
+check_repeated_digits_option(555)
