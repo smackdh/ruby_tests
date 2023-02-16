@@ -34,5 +34,9 @@ def prime_number_refactor(number)
   end
 end
 
+def prime_number_ultra_refactor(number)
+  puts number <= 1 || number.even? || !(2..Math.sqrt(number)).all? {|i| (number % i).nonzero?} ? "Not a prime number!!" : "Prime ✌🏼⭐️"
+end
 prime_number(3)
 prime_number_refactor(3)
+prime_number_ultra_refactor(3)
