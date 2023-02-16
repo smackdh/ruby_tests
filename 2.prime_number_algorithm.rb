@@ -5,8 +5,12 @@
 
 # -- Psuedo -- #
 # 1. Create a method that takes one argument
-# 2. Check if argument can be % divided by itself and it equals 0
-# 3. Give feedback
+# 2. Check so that number is higher than 1, if not = not prime
+# 3. Check if its even, if it is = not prime
+# 4. Check all numbers from 2(first prime) to square root of the number input, and iterate over
+# 5. In iteration, check that original number divided by the iteration number is NOT 0.
+# 6. If its not, it's a prime!
+# 7. Else, not prime
 
 def prime_number(number)
   if number <= 1
@@ -20,4 +24,15 @@ def prime_number(number)
   end
 end
 
-prime_number(53)
+def prime_number_refactor(number)
+  if number <= 1 || number.even?
+    puts 'Not a prime number! ❌'
+  elsif (2..Math.sqrt(number)).all? { |i| (number % i).nonzero? }
+    puts 'PRIME! ⭐️'
+  else
+    puts 'Not a prome number, bro ❌'
+  end
+end
+
+prime_number(3)
+prime_number_refactor(3)
